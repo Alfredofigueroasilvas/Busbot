@@ -1,9 +1,48 @@
 # Busbot
-Prueba de concepto de Laravel con codespaces para tener codebase
+Pasos para ejecutar correctamente la aplicación.
 
-# Enlace del Repositorio
-Este es el enlace al repositorio en GitHub:
-[(https://github.com/Alfredofigueroasilvas/Busbot)](https://github.com/Alfredofigueroasilvas/Busbot))
+## 1. Clonar el Repositorio
+#### Primero, clonar el repositorio
+#### git clone https://github.com/Alfredofigueroasilvas/busbot.git
+
+## 2. Navegar a la Carpeta del Repositorio
+#### Después de clonar el repositorio, navegar a la carpeta del proyecto
+#### cd busbot
+
+# 3. Instalar Dependencias de Composer
+#### Ejecutar el siguiente comando para instalar las dependencias del proyecto
+#### composer install
+
+# 4. Instalar Dependencias de Node.js
+#### Ejecutar el siguiente comando para instalar las dependencias de JavaScript
+#### npm install
+
+# 5. Configurar el Archivo de Entorno
+#### Copiar el archivo de entorno de ejemplo .env.example a un nuevo archivo .env
+#### cp .env.example .env
+
+# 6. Generar la Clave de la Aplicación
+#### Ejecutar el siguiente comando para generar una nueva clave de aplicación Laravel
+#### php artisan key:generate
+
+# 7. Configurar el Archivo .env
+#### Abrir el archivo .env y configurar las variables necesarias como la conexión a la base de datos.
+
+# 8. Migrar la Base de Datos
+#### Ejecutar las migraciones de la base de datos para crear las tablas necesarias
+#### php artisan migrate
+
+# 9. Compilar los Activos Frontend
+#### Compilar los activos frontend con Laravel
+#### npm run dev
+
+# 10. Ejecutar el Servidor de Desarrollo
+#### Ejecutar el servidor de desarrollo de Laravel
+#### php artisan serve
+#### Esto iniciará un servidor en http://localhost:8000 donde se podrá ver la aplicación en funcionamiento.
+
+# 11. Acceder a la Aplicación
+#### Abrir el navegador e ingresar a http://localhost:8000 para ver la aplicación en funcionamiento.
 
 ## Estructura del Flujo de Trabajo
 
