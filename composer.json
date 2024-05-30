@@ -11,8 +11,10 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "ibex/crud-generator": "^2.1",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
+        "laravel/ui": "^4.5",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.0",
         "phpunit/phpunit": "^11.0.1",
@@ -54,7 +56,7 @@
     },
     "config": {
         "optimize-autoloader": true,
-        "preferred-install": "dist",
+        "preferred-install": "rar",
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
