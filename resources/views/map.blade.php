@@ -172,7 +172,6 @@
         }
     </style>
 </head>
-<body>
     <h1>VIAJA SEGURO, VIAJA CON BUSBOT</h1>
     <div class="container">
         <label for="originSelect">Selecciona la ciudad de origen:</label>
@@ -191,5 +190,4 @@
             <button class="exit-button" onclick="handleExit()">Salir</button>
         </div>
     </div>
-</body>
 </html>
