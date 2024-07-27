@@ -2,6 +2,9 @@
 <html>
 <head>
     <title>VIAJA SEGURO, VIAJA CON BUSBOT</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvt3_sOIfzb-H_9BIKmZR92NrCxRjbHzY&libraries=places&callback=initMap"></script>
     <script>
         function initMap() {
@@ -94,12 +97,59 @@
 
         function handlePayment() {
             alert("Redirigiendo a la página de pago...");
-            // Aquí puedes añadir la lógica para redirigir a la página de pago
+            //para redirigir a pagina de pago
         }
 
         function handleExit() {
             window.close();
         }
+
+        function imprimirDatosViaje() {
+            const origen = document.getElementById('originSelect').value;
+            const destino = document.getElementById('destinationSelect').value;
+            const fechaViaje = document.getElementById('travelDate').value;
+            const horaSalida = document.getElementById('timeSelect').value;
+            const correoElectronico = document.getElementById('emailInput').value;
+
+            const datosViaje = `Origen: ${origen}\nDestino: ${destino}\nFecha de viaje: ${fechaViaje}\nHora de salida: ${horaSalida}`;
+
+            alert(datosViaje);
+
+            if (correoElectronico) {
+                enviarDatosPorCorreo(correoElectronico, datosViaje);
+            }
+        }
+
+        function enviarDatosPorCorreo(correo, datos) {
+            const asunto = 'Detalles de tu viaje con Busbot';
+            const cuerpo = encodeURIComponent(datos);
+            const enlace = `mailto:${correo}?subject=${asunto}&body=${cuerpo}`;
+            window.location.href = enlace;
+        }
+
+        //iniciando calendario
+        $(function() {
+            $("#travelDate").datepicker({
+                dateFormat: "yy-mm-dd",
+                minDate: 0 
+            });
+
+            function populateTimeSelect() {
+                const timeSelect = $('#timeSelect');
+                timeSelect.empty();
+                for (let hour = 0; hour < 24; hour++) {
+                    for (let minute = 0; minute < 60; minute += 30) {
+                        const time = ('0' + hour).slice(-2) + ':' + ('0' + minute).slice(-2);
+                        timeSelect.append($('<option>', {
+                            value: time,
+                            text: time
+                        }));
+                    }
+                }
+            }
+
+            populateTimeSelect();
+        });
     </script>
     <style>
         body {
@@ -133,7 +183,7 @@
             margin: 10px 0 5px;
             font-weight: bold;
         }
-        select {
+        select, input {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
@@ -183,11 +233,17 @@
         <select id="destinationSelect">
             <option value="" disabled selected>Elige una ciudad</option>
         </select>
+        <label for="travelDate">Selecciona la fecha del viaje:</label>
+        <input type="text" id="travelDate">
+        <label for="timeSelect">Selecciona la hora de salida:</label>
+        <select id="timeSelect"></select>
+        <label for="emailInput">Introduce tu correo electrónico:</label>
+        <input type="email" id="emailInput" placeholder="Correo electrónico">
         <div id="travelTime"></div>
         <div id="travelCost"></div>
         <div id="map"></div>
         <div class="button-container">
-            <button class="pay-button" onclick="handlePayment()">Pagar</button>
+            <button onclick="imprimirDatosViaje()">Imprimir mis Datos de Viaje</button>
             <button class="exit-button" onclick="handleExit()">Salir</button>
         </div>
     </div>
