@@ -7,13 +7,13 @@
 
         <!-- Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" :value="__('Correo Electronico')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('Contraseña')" />
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
                             name="password"
@@ -30,7 +30,7 @@
         </div>
 
         <x-primary-button class="ms-3 w-full justify-center">
-            {{ __('Log in') }}
+            {{ __('Iniciar sesion') }}
         </x-primary-button>
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
