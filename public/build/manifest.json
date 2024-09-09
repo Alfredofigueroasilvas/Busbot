@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "resources/css/app.css": {
     "file": "assets/app-DPKxqDte.css",
     "src": "resources/css/app.css",
@@ -9,5 +10,17 @@
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
+=======
+  "resources/js/app.js": {
+    "file": "assets/app-BkDPDVeP.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-D-sv12UV.css",
+    "src": "resources/sass/app.scss",
+    "isEntry": true
+>>>>>>> aa49d920e4b842ef0fcf84891abdabe605afddc6
   }
 }
