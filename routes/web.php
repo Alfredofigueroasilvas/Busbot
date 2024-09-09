@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\EditUserController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Http\Request;
@@ -8,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('map', MapController::class);
+Route::get('edituser', EditUserController::class);
+Route::get('crud', CrudController::class);
 Route::resource('usuarios', UsuarioController::class);
 Route::get('/', function () {
     return redirect()->route('login');

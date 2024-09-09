@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIAJA SEGURO, VIAJA CON BUSBOT</title>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvt3_sOIfzb-H_9BIKmZR92NrCxRjbHzY&libraries=places&callback=initMap"></script>
     <script>
@@ -117,7 +119,17 @@
             padding: 20px;
             margin: 0;
             width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
             text-align: center;
+        }
+        .profile-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
         }
         .container {
             width: 90%;
@@ -166,13 +178,23 @@
             background-color: #4CAF50;
             color: white;
         }
+        .pay-button:hover {
+            background-color: #45a049;
+        }
         .exit-button {
             background-color: #f44336;
             color: white;
         }
+        .exit-button:hover {
+            background-color: #d32f2f;
+        }
     </style>
 </head>
-    <h1>VIAJA SEGURO, VIAJA CON BUSBOT</h1>
+<body>
+    <h1>
+        VIAJA SEGURO, VIAJA CON BUSBOT
+        <a href="/edituser" class="profile-link">Mi perfil</a>
+    </h1>
     <div class="container">
         <label for="originSelect">Selecciona la ciudad de origen:</label>
         <select id="originSelect">
@@ -190,4 +212,5 @@
             <button class="exit-button" onclick="handleExit()">Salir</button>
         </div>
     </div>
+</body>
 </html>
